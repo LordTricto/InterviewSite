@@ -1,0 +1,21 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  list-style: none;
+}
+.nav_back {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  padding: 0.7rem;
+  background-color: #eeeff7;
+  border-radius: 10px;
+}
+.nav_sign_in {
+  font-size: 14px;
+}
+.nav_sign_in--danger {
+  color: #fa4a84;
+}
