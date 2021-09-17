@@ -1,0 +1,91 @@
+.dashboardSelect {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 2.75rem;
+  padding: 0 2rem;
+  width: 100%;
+}
+.dashboardSelect_accDetails {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+.dashboardSelect_accDetails_text {
+  padding-left: 1rem;
+}
+.dashboardSelect_accDetails_text_header {
+  font-size: 16px;
+}
+.dashboardSelect_accDetails_text_paragraph {
+  font-size: 12px;
+  color: #8397ab;
+}
+.dashboardSelect_icon {
+  width: 3rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #f4f8fb;
+  color: #8397ab;
+  border-radius: 4px;
+}
+.icon_spin_on {
+  transform: rotate(180deg);
+  transition: 0.4s;
+}
+.icon_spin_off {
+  transform: rotate(0deg);
+  transition: 0.4s;
+}
+.dashboardSelect_options {
+  position: absolute;
+  top: 140%;
+  width: 90%;
+  z-index: 1;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 1px 1px 10px -2px rgba(0, 0, 0, 0.5);
+}
+.dashboardSelect_options_container {
+  position: relative;
+  font-size: 13px;
+  height: 100%;
+}
+.dashboardSelect_options_container_option {
+  list-style: none;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+  cursor: pointer;
+  color: #8397ab;
+  background-color: white;
+}
+.dashboardSelect_options_container_option:not(:first-child) {
+  border-top: 1px solid#dddddd;
+}
+.dashboardSelect_options_container_option:hover {
+  background-color: rgb(253, 253, 253);
+}
+.dashboardSelect_options_container_option:nth-last-child(2) {
+  padding-bottom: 3rem;
+}
+.dashboardSelect_options_container_option--active {
+  font-weight: 500;
+  color: black;
+}
+.dashboardSelect_options_container_cta {
+  position: absolute;
+  bottom: 1rem;
+  z-index: 1;
+  color: red;
+  padding-left: 1.5rem;
+  cursor: pointer;
+}

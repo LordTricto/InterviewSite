@@ -1,0 +1,31 @@
+.dashboardNav {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  padding: 0 6rem;
+}
+.dashboardNav_text {
+  font-size: 21px;
+  color: #8397ab;
+}
+.dashboardNav_user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.dashboardNav_user_picture,
+.dashboardNav_user_notification {
+  width: 2.5rem;
+  margin-left: 3rem;
+  cursor: pointer;
+}
+.dashboardNav_user_picture img,
+.dashboardNav_user_notification img {
+  width: 100%;
+}

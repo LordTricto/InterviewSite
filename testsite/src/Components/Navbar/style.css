@@ -1,5 +1,7 @@
 .nav {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
@@ -7,13 +9,20 @@
 }
 .nav_back {
   display: flex;
-  justify-items: center;
+  justify-content: center;
   align-items: center;
-  padding: 0.7rem;
+  flex-direction: row;
+  height: 32px;
+  width: 32px;
   background-color: #eeeff7;
   border-radius: 10px;
 }
+.icon {
+  align-self: center;
+  justify-self: center;
+}
 .nav_sign_in {
+  height: 100%;
   font-size: 14px;
 }
 .nav_sign_in--danger {

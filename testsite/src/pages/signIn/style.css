@@ -1,0 +1,5 @@
+.main_body_middle_form_email_container,
+.main_body_middle_form_password_container {
+  position: relative;
+  overflow: hidden;
+}

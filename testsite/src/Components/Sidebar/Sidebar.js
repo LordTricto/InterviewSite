@@ -1,33 +1,33 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import logo from "../../assets/Combined Shape@2x.png";
 import image1 from "../../assets/Group3@2x.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopyright } from "@fortawesome/free-regular-svg-icons";
 import "./style.css";
 
-const Sidebar = () => {
+const Sidebar = ({ dark }) => {
   return (
     <>
-      <div className="side_bar">
-        <div className="side_bar_top">
+      <div className={`sidebar ${dark ? "sidebar--dark" : null}`}>
+        <div className="sidebar_top">
           <img src={logo} alt="logo" />{" "}
         </div>
-        <div className="side_bar_middle">
-          <div className="side_bar_middle_slide">
-            <div className="side_bar_middle_slide_1"></div>
-            <div className="side_bar_middle_slide_2"></div>
-            <div className="side_bar_middle_slide_3"></div>
-            <div className="side_bar_middle_slide_4"></div>
-            <div className="side_bar_middle_slide_5"></div>
+        <div className="sidebar_middle">
+          <div className="sidebar_middle_slide">
+            <div className="sidebar_middle_slide_1"></div>
+            <div className="sidebar_middle_slide_2"></div>
+            <div className="sidebar_middle_slide_3"></div>
+            <div className="sidebar_middle_slide_4"></div>
+            <div className="sidebar_middle_slide_5"></div>
           </div>
 
-          <div className="side_bar_middle_text">
+          <div className="sidebar_middle_text">
             {" "}
-            <div className="side_bar_middle_text_header">
+            <div className="sidebar_middle_text_header">
               {" "}
               <span>Create multiple</span> <span>sub-account</span>
             </div>
-            <div className="side_bar_middle_text_para">
+            <div className="sidebar_middle_text_paragraph">
               <p>
                 Organize your business finances easily with multiple accounts,
                 No limits!
@@ -35,11 +35,11 @@ const Sidebar = () => {
             </div>
           </div>
 
-          <div className="side_bar_middle_img">
+          <div className="sidebar_middle_img">
             <img src={image1} alt="money-img" />{" "}
           </div>
         </div>
-        <div className="side_bar_bottom">
+        <div className="sidebar_bottom">
           <p>
             {" "}
             <FontAwesomeIcon icon={faCopyright} /> 2020 Prospa Inc
