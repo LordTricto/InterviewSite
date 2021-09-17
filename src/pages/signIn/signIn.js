@@ -35,7 +35,7 @@ const SignIn = () => {
             </form>
           </div>{" "}
           <div className="main_body_bottom">
-            <Link to="/signUpBusiness">
+            <Link to="/dashboard">
               {" "}
               <button>Next</button>
             </Link>
