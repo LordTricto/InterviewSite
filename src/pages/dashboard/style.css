@@ -1,6 +1,7 @@
 .dashboardContainer {
   display: grid;
   grid-template-columns: 1fr 4fr;
+  overflow: hidden;
 }
 .dashboardSideContent {
   background-color: #fff;
@@ -13,18 +14,25 @@
   justify-items: center;
   align-items: flex-start;
   flex-direction: column;
+
+  padding-top: 1.5rem;
+  height: 100vh;
 }
 .dashboardMain_head {
-  margin: 1.5rem 0 0 0;
+  display: flex;
   width: 100%;
-  height: 4.5rem;
+  height: 4.9rem;
   position: relative;
 }
 .dashboardMain_body {
   width: 100%;
   height: 100%;
-  padding: 2rem 5rem;
+  overflow-y: scroll;
+  padding: 2rem 6rem;
   background-color: #f4f8fb;
+}
+.dashboardMain_body::-webkit-scrollbar {
+  display: none;
 }
 .dashboardMain_body_head {
   display: flex;
@@ -54,10 +62,9 @@
   font-size: 14px;
 }
 .dashboardMain_body_body {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: minmax(100px, auto);
+  gap: 2rem;
   padding-top: 2.5rem;
 }
 .dashboardMain_body_body_top {
@@ -65,4 +72,169 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   width: 100%;
+}
+
+.dashboardMain_body_body_middle {
+  display: grid;
+  grid-template-columns: auto 40%;
+  gap: 2rem;
+  width: 100%;
+}
+
+.dashboardMain_body_body_middle_summary {
+  background-color: #fff;
+  padding: 1.8rem 1.5rem;
+  box-shadow: 1px 1px 7px -2px rgb(0 0 0 / 50%);
+  border-radius: 6px;
+}
+.dashboardMain_body_body_middle_summary_month {
+  font-size: 18px;
+  font-weight: 500;
+}
+.dashboardMain_body_body_middle_summary_transaction {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  padding-top: 1.5rem;
+}
+.dashboardMain_body_body_middle_summary_transaction_text {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  font-size: 14px;
+}
+.dashboardMain_body_body_middle_summary_transaction_text:not(:first-child) {
+  padding-left: 3rem;
+}
+.dashboardMain_body_body_middle_summary_transaction_text_top {
+  color: #8397ab;
+}
+.dashboardMain_body_body_middle_summary_transaction_text_bottom {
+  padding-top: 0.15rem;
+}
+.dashboardMain_body_body_middle_summary_graph {
+  padding-top: 2rem;
+  height: 18rem;
+}
+.dashboardMain_body_body_middle_summary_graph img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.dashboardMain_body_body_middle_outflow {
+  background-color: #fff;
+  padding: 1.8rem 1.5rem;
+  box-shadow: 1px 1px 7px -2px rgb(0 0 0 / 50%);
+  border-radius: 6px;
+}
+.dashboardMain_body_body_middle_outflow_head {
+  font-size: 18px;
+  font-weight: 500;
+}
+.dashboardMain_body_body_middle_outflow_body {
+  padding-top: 4rem;
+}
+.dashboardMain_body_body_middle_outflow_body_type {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  width: 100%;
+}
+.dashboardMain_body_body_middle_outflow_body_type_bank,
+.dashboardMain_body_body_middle_outflow_body_type_internet,
+.dashboardMain_body_body_middle_outflow_body_type_marketing,
+.dashboardMain_body_body_middle_outflow_body_type_transfer {
+  display: flex;
+  flex-direction: row;
+}
+.dashboardMain_body_body_middle_outflow_body_type_bank_text,
+.dashboardMain_body_body_middle_outflow_body_type_internet_text,
+.dashboardMain_body_body_middle_outflow_body_type_marketing_text,
+.dashboardMain_body_body_middle_outflow_body_type_transfer_text {
+  padding-left: 1rem;
+}
+.dashboardMain_body_body_middle_outflow_body_type:not(:first-child) {
+  padding-top: 2rem;
+}
+.dashboardMain_body_body_middle_outflow_body_type_bank_range_price,
+.dashboardMain_body_body_middle_outflow_body_type_internet_range_price,
+.dashboardMain_body_body_middle_outflow_body_type_marketing_range_price,
+.dashboardMain_body_body_middle_outflow_body_type_transfer_range_price {
+  font-size: 14px;
+}
+.dashboardMain_body_body_middle_outflow_body_type_bank_range_progress,
+.dashboardMain_body_body_middle_outflow_body_type_internet_range_progress,
+.dashboardMain_body_body_middle_outflow_body_type_marketing_range_progress,
+.dashboardMain_body_body_middle_outflow_body_type_transfer_range_progress {
+  background-color: #eeeff7;
+  width: 100%;
+  height: 0.4rem;
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+.dashboardMain_body_body_middle_outflow_body_type_bank_range_progress::before,
+.dashboardMain_body_body_middle_outflow_body_type_internet_range_progress::before,
+.dashboardMain_body_body_middle_outflow_body_type_marketing_range_progress::before,
+.dashboardMain_body_body_middle_outflow_body_type_transfer_range_progress::before {
+  content: "";
+  position: absolute;
+  background-color: #ffcf56;
+  height: 100%;
+}
+.dashboardMain_body_body_middle_outflow_body_type_bank_range_progress::before {
+  width: 93%;
+}
+.dashboardMain_body_body_middle_outflow_body_type_internet_range_progress::before {
+  width: 68%;
+}
+.dashboardMain_body_body_middle_outflow_body_type_marketing_range_progress::before {
+  width: 30%;
+}
+.dashboardMain_body_body_middle_outflow_body_type_transfer_range_progress::before {
+  width: 15%;
+}
+
+.dashboardMain_body_body_bottom {
+  background-color: #fff;
+  padding: 1.8rem 1.5rem;
+  box-shadow: 1px 1px 7px -2px rgb(0 0 0 / 50%);
+  border-radius: 6px;
+}
+.dashboardMain_body_body_bottom_head {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.dashboardMain_body_body_bottom_head_text {
+  font-size: 16px;
+}
+.dashboardMain_body_body_bottom_head_cta {
+  background-color: white;
+  border: 1px solid #fa4a84;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  color: #fa4a84;
+}
+.dashboardMain_body_body_bottom_body_transactions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+}
+.dashboardMain_body_body_bottom_body_transactions_transaction {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.dashboardMain_body_body_bottom_body_transactions_transaction_details {
+  padding-left: 1rem;
+}
+.dashboardMain_body_body_bottom_body_transactions_transaction_details_text {
+  font-size: 16px;
+}
+.dashboardMain_body_body_bottom_body_transactions_transaction_details_time {
+  font-size: 14px;
+  color: #8397ab;
 }

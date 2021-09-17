@@ -3,6 +3,7 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
 .disappear {
   opacity: 0;
   pointer-events: none;
