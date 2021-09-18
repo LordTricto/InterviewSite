@@ -4,7 +4,7 @@
   justify-content: flex-start;
   height: 100%;
   width: 100%;
-  padding: 1.5rem 0rem 0 0;
+  padding: 1.5rem 0 0 0;
 }
 .dashboardSidebar_head {
   display: flex;
@@ -27,7 +27,6 @@
 }
 .dashboardSidebar_body_head {
   height: 100%;
-  min-height: 3;
 }
 .dashboardSidebar_body_head_body {
   display: flex;
@@ -50,13 +49,43 @@
   justify-content: flex-start;
   align-items: center;
   padding-left: 1rem;
+  font-size: 14px;
 }
-.dashboardSidebar_bottom {
+.dashboardSidebar_body_body {
   width: 10rem;
   padding-bottom: 1.5rem;
 }
-.dashboardSidebar_bottom img {
+.dashboardSidebar_body_body img {
   width: 100%;
 }
+.dashboardSidebar_userPicture {
+  display: none;
+}
 @media only screen and (max-width: 1600px) {
+}
+
+/* iPad  Pro*/
+@media only screen and (max-width: 1030px) {
+  .dashboardSidebar_head {
+    align-items: center;
+  }
+  .dashboardSidebar_userPicture {
+    display: flex;
+    width: 2.5rem;
+    padding-bottom: 1.5rem;
+    cursor: pointer;
+  }
+  .dashboardSidebar_userPicture img {
+    width: 100%;
+  }
+  .dashboardSidebar_body_body {
+    display: none;
+  }
+}
+
+/* Surface Duo */
+@media only screen and (max-width: 550px) {
+  .dashboardSelect {
+    padding: 0 1rem !important;
+  }
 }

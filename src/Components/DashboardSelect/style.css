@@ -16,6 +16,8 @@
   width: 100%;
 }
 .dashboardSelect_accDetails_text {
+  display: flex;
+  flex-direction: column;
   padding-left: 1rem;
 }
 .dashboardSelect_accDetails_text_header {

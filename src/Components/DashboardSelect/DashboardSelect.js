@@ -22,12 +22,12 @@ const DashboardSelect = ({ options }) => {
             <img src={image1} alt="businessImg" />
           </div>
           <div className="dashboardSelect_accDetails_text">
-            <div className="dashboardSelect_accDetails_text_header">
+            <span className="dashboardSelect_accDetails_text_header">
               {businessName}
-            </div>
-            <div className="dashboardSelect_accDetails_text_paragraph">
+            </span>
+            <span className="dashboardSelect_accDetails_text_paragraph">
               Manage account
-            </div>
+            </span>
           </div>
         </div>
         <div className="dashboardSelect_icon" onClick={clickSelect}>

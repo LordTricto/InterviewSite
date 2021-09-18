@@ -2,16 +2,34 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import Navbar from "../../Components/Navbar/Navbar";
-
+import Footer from "../../Components/Footer/Footer";
 import "./style.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import logo from "../../assets/Combined Shape 2@2x.png";
+import { motion } from "framer-motion";
+import useOverlay from "../../hooks/useOverlay";
 
 const SignUpBusiness = () => {
   const [selectedOption, setSelectedOption] = useState(false);
+  const [animation] = useOverlay();
   return (
     <div className="container">
-      <aside className="side_content">
+      <motion.div
+        className="overlay"
+        variants={animation}
+        animate="animate"
+        exit="exit"
+      >
+        <motion.img
+          variants={animation}
+          animate="animateText"
+          exit="exit"
+          src={logo}
+          alt="logo"
+        />
+      </motion.div>
+      <aside className="sideContent">
         <Sidebar />
       </aside>
       <section className="main">
@@ -228,6 +246,8 @@ const SignUpBusiness = () => {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };

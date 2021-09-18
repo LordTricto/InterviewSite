@@ -45,7 +45,7 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
-  margin: 20rem 0;
+  margin: 10rem 0;
   position: relative;
   object-fit: contain;
 }
@@ -57,6 +57,20 @@
 
 @media only screen and (max-width: 1600px) {
   .sidebar_middle_img {
-    margin: 7vh 0;
+    margin: 30% 0;
+  }
+}
+
+/* iPad  Pro*/
+@media only screen and (max-width: 1030px) {
+  .sidebar {
+    height: 100%;
+    padding: 3rem 3rem;
+  }
+  .sidebar_middle_img {
+    margin: 10% 0;
+  }
+  .sidebar_bottom {
+    display: none;
   }
 }

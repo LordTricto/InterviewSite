@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import DashboardSidebar from "../../Components/DashboardSidebar/DashboardSidebar";
 import DashboardNavbar from "../../Components/DashboardNavbar/DashboardNavbar";
 import AccountCard from "../../Components/DashboardAccountCard/DashboardAccountCard";
+import Footer from "../../Components/Footer/Footer";
 import image1 from "../../assets/Group 38@2x.png";
 import image2 from "../../assets/Group 12@2x.png";
 import image3 from "../../assets/Group 13@2x.png";
@@ -9,16 +10,43 @@ import image4 from "../../assets/Group 15@2x.png";
 import image5 from "../../assets/Group 17@2x.png";
 import image6 from "../../assets/Group 88@2x.png";
 import image7 from "../../assets/Group 18@2x.png";
+import logo from "../../assets/Combined Shape 2@2x.png";
+import { motion } from "framer-motion";
+import useOverlay from "../../hooks/useOverlay";
 import "./style.css";
+
 const Dashboard = () => {
+  const [showMobile, setShowMobile] = useState(false);
+  const [animation] = useOverlay();
+  const mobileNav = () => {
+    showMobile ? setShowMobile(false) : setShowMobile(true);
+  };
   return (
     <div className="dashboardContainer">
-      <aside className="dashboardSideContent">
+      <motion.div
+        className="overlay"
+        variants={animation}
+        animate="animate"
+        exit="exit"
+      >
+        <motion.img
+          variants={animation}
+          animate="animateText"
+          exit="exit"
+          src={logo}
+          alt="logo"
+        />
+      </motion.div>
+      <aside
+        className={`dashboardSideContent ${
+          showMobile ? "dashboardSideContent--move" : null
+        }`}
+      >
         <DashboardSidebar />
       </aside>
       <section className="dashboardMain">
         <div className="dashboardMain_head">
-          <DashboardNavbar />
+          <DashboardNavbar func={mobileNav} />
         </div>
         <div className="dashboardMain_body">
           <div className="dashboardMain_body_head">
@@ -99,17 +127,15 @@ const Dashboard = () => {
                       <div className="dashboardMain_body_body_middle_outflow_body_type_bank_image">
                         <img src={image2} alt="bank" />
                       </div>
-                      <div className="dashboardMain_body_body_middle_outflow_body_type_bank_text">
+                      <span className="dashboardMain_body_body_middle_outflow_body_type_bank_text">
                         Bank Fees
-                      </div>
+                      </span>
                     </div>
                     <div className="dashboardMain_body_body_middle_outflow_body_type_bank_range">
                       <span className="dashboardMain_body_body_middle_outflow_body_type_bank_range_price">
                         - ₦ 250, 000
                       </span>
-                      <div className="dashboardMain_body_body_middle_outflow_body_type_bank_range_progress">
-                        <div className="dashboardMain_body_body_middle_outflow_body_type_bank_range_progress_inner"></div>
-                      </div>
+                      <div className="dashboardMain_body_body_middle_outflow_body_type_bank_range_progress"></div>
                     </div>
                   </div>
                   {/* Internet */}
@@ -118,17 +144,15 @@ const Dashboard = () => {
                       <div className="dashboardMain_body_body_middle_outflow_body_type_internet_image">
                         <img src={image3} alt="Internet" />
                       </div>
-                      <div className="dashboardMain_body_body_middle_outflow_body_type_internet_text">
+                      <span className="dashboardMain_body_body_middle_outflow_body_type_internet_text">
                         Internet
-                      </div>
+                      </span>
                     </div>
                     <div className="dashboardMain_body_body_middle_outflow_body_type_internet_range">
                       <span className="dashboardMain_body_body_middle_outflow_body_type_internet_range_price">
                         - ₦ 250, 000
                       </span>
-                      <div className="dashboardMain_body_body_middle_outflow_body_type_internet_range_progress">
-                        <div className="dashboardMain_body_body_middle_outflow_body_type_internet_range_progress_inner"></div>
-                      </div>
+                      <div className="dashboardMain_body_body_middle_outflow_body_type_internet_range_progress"></div>
                     </div>
                   </div>
                   {/* Marketing */}
@@ -145,9 +169,7 @@ const Dashboard = () => {
                       <span className="dashboardMain_body_body_middle_outflow_body_type_marketing_range_price">
                         - ₦ 250, 000
                       </span>
-                      <div className="dashboardMain_body_body_middle_outflow_body_type_marketing_range_progress">
-                        <div className="dashboardMain_body_body_middle_outflow_body_type_marketing_range_progress_inner"></div>
-                      </div>
+                      <div className="dashboardMain_body_body_middle_outflow_body_type_marketing_range_progress"></div>
                     </div>
                   </div>
                   {/* Transfer */}
@@ -156,17 +178,15 @@ const Dashboard = () => {
                       <div className="dashboardMain_body_body_middle_outflow_body_type_transfer_image">
                         <img src={image5} alt="transfer" />
                       </div>
-                      <div className="dashboardMain_body_body_middle_outflow_body_type_transfer_text">
+                      <span className="dashboardMain_body_body_middle_outflow_body_type_transfer_text">
                         Transfer
-                      </div>
+                      </span>
                     </div>
                     <div className="dashboardMain_body_body_middle_outflow_body_type_transfer_range">
                       <span className="dashboardMain_body_body_middle_outflow_body_type_transfer_range_price">
                         - ₦ 250, 000
                       </span>
-                      <div className="dashboardMain_body_body_middle_outflow_body_type_transfer_range_progress">
-                        <div className="dashboardMain_body_body_middle_outflow_body_type_transfer_range_progress_inner"></div>
-                      </div>
+                      <div className="dashboardMain_body_body_middle_outflow_body_type_transfer_range_progress"></div>
                     </div>
                   </div>
                 </div>
@@ -188,17 +208,17 @@ const Dashboard = () => {
                       <img src={image6} alt="icon" />
                     </div>
                     <div className="dashboardMain_body_body_bottom_body_transactions_transaction_details">
-                      <div className="dashboardMain_body_body_bottom_body_transactions_transaction_details_text">
+                      <span className="dashboardMain_body_body_bottom_body_transactions_transaction_details_text">
                         Transfer Fee
-                      </div>
-                      <div className="dashboardMain_body_body_bottom_body_transactions_transaction_details_time">
+                      </span>
+                      <span className="dashboardMain_body_body_bottom_body_transactions_transaction_details_time">
                         12:49 Am
-                      </div>
+                      </span>
                     </div>
                   </div>
-                  <div className="dashboardMain_body_body_bottom_body_transactions_price">
+                  <span className="dashboardMain_body_body_bottom_body_transactions_price">
                     -₦145.90
-                  </div>
+                  </span>
                 </div>
                 <div className="dashboardMain_body_body_bottom_body_transactions">
                   <div className="dashboardMain_body_body_bottom_body_transactions_transaction">
@@ -206,17 +226,17 @@ const Dashboard = () => {
                       <img src={image7} alt="icon" />
                     </div>
                     <div className="dashboardMain_body_body_bottom_body_transactions_transaction_details">
-                      <div className="dashboardMain_body_body_bottom_body_transactions_transaction_details_text">
+                      <span className="dashboardMain_body_body_bottom_body_transactions_transaction_details_text">
                         Adam Chapman
-                      </div>
-                      <div className="dashboardMain_body_body_bottom_body_transactions_transaction_details_time">
+                      </span>
+                      <span className="dashboardMain_body_body_bottom_body_transactions_transaction_details_time">
                         12:49 Am
-                      </div>
+                      </span>
                     </div>
                   </div>
-                  <div className="dashboardMain_body_body_bottom_body_transactions_price">
+                  <span className="dashboardMain_body_body_bottom_body_transactions_price">
                     -₦2,000.00
-                  </div>
+                  </span>
                 </div>
                 <div className="dashboardMain_body_body_bottom_body_transactions">
                   <div className="dashboardMain_body_body_bottom_body_transactions_transaction">
@@ -224,23 +244,24 @@ const Dashboard = () => {
                       <img src={image7} alt="icon" />
                     </div>
                     <div className="dashboardMain_body_body_bottom_body_transactions_transaction_details">
-                      <div className="dashboardMain_body_body_bottom_body_transactions_transaction_details_text">
+                      <span className="dashboardMain_body_body_bottom_body_transactions_transaction_details_text">
                         Shirley Barnes
-                      </div>
-                      <div className="dashboardMain_body_body_bottom_body_transactions_transaction_details_time">
+                      </span>
+                      <span className="dashboardMain_body_body_bottom_body_transactions_transaction_details_time">
                         12:49 Am
-                      </div>
+                      </span>
                     </div>
                   </div>
-                  <div className="dashboardMain_body_body_bottom_body_transactions_price">
+                  <span className="dashboardMain_body_body_bottom_body_transactions_price">
                     -₦2,000.00
-                  </div>
+                  </span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+      <Footer dark />
     </div>
   );
 };

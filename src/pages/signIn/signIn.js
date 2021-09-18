@@ -3,13 +3,31 @@ import { Link } from "react-router-dom";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import Navbar from "../../Components/Navbar/Navbar";
 import Input from "../../Components/Input/Input";
-
+import Footer from "../../Components/Footer/Footer";
+import logo from "../../assets/Combined Shape 2@2x.png";
+import { motion } from "framer-motion";
+import useOverlay from "../../hooks/useOverlay";
 import "./style.css";
 
 const SignIn = () => {
+  const [animation] = useOverlay();
   return (
     <div className="container">
-      <aside className="side_content">
+      <motion.div
+        className="overlay"
+        variants={animation}
+        animate="animate"
+        exit="exit"
+      >
+        <motion.img
+          variants={animation}
+          animate="animateText"
+          exit="exit"
+          src={logo}
+          alt="logo"
+        />
+      </motion.div>
+      <aside className="sideContent">
         <Sidebar dark />
       </aside>
       <section className="main">
@@ -42,6 +60,8 @@ const SignIn = () => {
           </div>
         </div>
       </section>
+
+      <Footer dark />
     </div>
   );
 };

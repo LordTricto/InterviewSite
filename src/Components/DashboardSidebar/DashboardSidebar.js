@@ -4,6 +4,7 @@ import image1 from "../../assets/Group11@2x.png";
 import image2 from "../../assets/Group@2x.png";
 import image3 from "../../assets/Group14@2x.png";
 import image4 from "../../assets/Group9@2x.png";
+import image5 from "../../assets/Oval@2x.png";
 import "./style.css";
 import DashboardSelect from "../DashboardSelect/DashboardSelect";
 const DashboardSidebar = () => {
@@ -30,44 +31,57 @@ const DashboardSidebar = () => {
             <div className="dashboardSidebar_body_head_body_icon">
               <img src={image1} alt="account" />
             </div>
-            <div className="dashboardSidebar_body_head_body_text">Account</div>
+            <span className="dashboardSidebar_body_head_body_text">
+              Account
+            </span>
           </div>
           <div className="dashboardSidebar_body_head_body">
             <div className="dashboardSidebar_body_head_body_icon">
               <img src={image2} alt="transfer" />
             </div>
-            <div className="dashboardSidebar_body_head_body_text">Transfer</div>
+            <span className="dashboardSidebar_body_head_body_text">
+              Transfer
+            </span>
           </div>
           <div className="dashboardSidebar_body_head_body">
             <div className="dashboardSidebar_body_head_body_icon">
               <img src={image3} alt="invoice" />
             </div>
-            <div className="dashboardSidebar_body_head_body_text">Invoice</div>
+            <span className="dashboardSidebar_body_head_body_text">
+              Invoice
+            </span>
           </div>
           <div className="dashboardSidebar_body_head_body">
             <div className="dashboardSidebar_body_head_body_icon">
               <img src={image4} alt="management" />
             </div>
-            <div className="dashboardSidebar_body_head_body_text">
+            <span className="dashboardSidebar_body_head_body_text">
               Management
-            </div>
+            </span>
           </div>
           <div className="dashboardSidebar_body_head_body">
             <div className="dashboardSidebar_body_head_body_icon">
               <img src={image4} alt="security" />
             </div>
-            <div className="dashboardSidebar_body_head_body_text">Security</div>
+            <span className="dashboardSidebar_body_head_body_text">
+              Security
+            </span>
           </div>
           <div className="dashboardSidebar_body_head_body">
             <div className="dashboardSidebar_body_head_body_icon">
               <img src={image4} alt="support" />
             </div>
-            <div className="dashboardSidebar_body_head_body_text">Support</div>
+            <span className="dashboardSidebar_body_head_body_text">
+              Support
+            </span>
           </div>
         </div>
 
-        <div className="dashboardSidebar_bottom">
+        <div className="dashboardSidebar_body_body">
           <img src={logo} alt="logo" />
+        </div>
+        <div className="dashboardSidebar_userPicture">
+          <img src={image5} alt="user profile" />
         </div>
       </div>
     </div>

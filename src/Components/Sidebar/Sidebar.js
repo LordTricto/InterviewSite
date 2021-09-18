@@ -27,12 +27,10 @@ const Sidebar = ({ dark }) => {
               {" "}
               <span>Create multiple</span> <span>sub-account</span>
             </div>
-            <div className="sidebar_middle_text_paragraph">
-              <p>
-                Organize your business finances easily with multiple accounts,
-                No limits!
-              </p>
-            </div>
+            <p className="sidebar_middle_text_paragraph">
+              Organize your business finances easily with multiple accounts, No
+              limits!
+            </p>
           </div>
 
           <div className="sidebar_middle_img">
@@ -40,8 +38,7 @@ const Sidebar = ({ dark }) => {
           </div>
         </div>
         <div className="sidebar_bottom">
-          <p>
-            {" "}
+          <p className="sidebar_bottom_text">
             <FontAwesomeIcon icon={faCopyright} /> 2020 Prospa Inc
           </p>
         </div>
