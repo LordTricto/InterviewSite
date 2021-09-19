@@ -3,7 +3,12 @@ a {
   text-decoration: none;
   color: inherit;
 }
-
+html {
+  height: -webkit-fill-available;
+}
+body {
+  min-height: -webkit-fill-available;
+}
 .disappear {
   opacity: 0;
   pointer-events: none;
@@ -28,6 +33,8 @@ a {
 .container {
   display: grid;
   grid-template-columns: 1fr 3fr;
+  height: -webkit-fill-available;
+  min-height: -webkit-fill-available;
 }
 .sideContent {
   height: 100vh;
