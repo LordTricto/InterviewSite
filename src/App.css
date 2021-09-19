@@ -15,14 +15,15 @@ a {
 .overlay {
   height: 100vh;
   width: 100vw;
-  height: -webkit-fill-available;
   min-height: -webkit-fill-available;
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
   z-index: 9;
+  top: 0;
   background-color: #fff;
+  min-height: -webkit-fill-available;
 }
 .container {
   display: grid;
