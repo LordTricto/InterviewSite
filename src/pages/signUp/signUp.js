@@ -29,8 +29,8 @@ function SignUp() {
       >
         <motion.img
           variants={animation}
-          animate="animateText"
-          exit="exit"
+          animate="animateImg"
+          exit="exitImg"
           src={logo}
           alt="logo"
         />

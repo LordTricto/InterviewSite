@@ -3,24 +3,25 @@ const useOverlay = () => {
     exit: {
       opacity: 1,
       pointerEvents: "unset",
+      visibility: "visible",
       overFlow: "hidden",
-      transition: { duration: 2, ease: "easeOut" },
+      transition: { duration: 1, ease: "easeOut" },
     },
-    exitText: {
+    exitImg: {
       opacity: 1,
       pointerEvents: "unset",
-      transition: { duration: 2, ease: "easeOut" },
+      transition: { duration: 0.5, ease: "easeOut" },
     },
     animate: {
       opacity: 0,
       pointerEvents: "none",
-      overFlow: "hidden",
+      overFlow: "unset",
       transition: { delay: 0.5, duration: 1, ease: "easeOut" },
     },
-    animateText: {
+    animateImg: {
       opacity: 0,
       pointerEvents: "none",
-      transition: { duration: 1, ease: "easeOut" },
+      transition: { duration: 0.5, ease: "easeOut" },
     },
   };
 
