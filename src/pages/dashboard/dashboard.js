@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DashboardSidebar from "../../Components/DashboardSidebar/DashboardSidebar";
 import DashboardNavbar from "../../Components/DashboardNavbar/DashboardNavbar";
 import AccountCard from "../../Components/DashboardAccountCard/DashboardAccountCard";
@@ -18,11 +18,18 @@ import "./style.css";
 const Dashboard = () => {
   const [showMobile, setShowMobile] = useState(false);
   const [animation] = useOverlay();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+    };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
   const mobileNav = () => {
     showMobile ? setShowMobile(false) : setShowMobile(true);
   };
   return (
     <div className="dashboardContainer">
+      {/* Page Transition Div */}
       <motion.div
         className="overlay"
         variants={animation}
@@ -37,6 +44,8 @@ const Dashboard = () => {
           alt="logo"
         />
       </motion.div>
+      {/* Page Transition Div */}
+      {/* Sidebar Div */}
       <aside
         className={`dashboardSideContent ${
           showMobile ? "dashboardSideContent--move" : null
@@ -44,11 +53,17 @@ const Dashboard = () => {
       >
         <DashboardSidebar />
       </aside>
+      {/* Sidebar Div */}
+      {/* Main Content Div */}
       <section className="dashboardMain">
+        {/* Sub Div 1 */}
         <div className="dashboardMain_head">
           <DashboardNavbar func={mobileNav} />
         </div>
+        {/* Sub Div 1 */}
+        {/* Sub Div 2 */}
         <div className="dashboardMain_body">
+          {/* Sub Div 2 Top */}
           <div className="dashboardMain_body_head">
             <div className="dashboardMain_body_head_text">
               <span className="dashboardMain_body_head_text_header">
@@ -65,7 +80,10 @@ const Dashboard = () => {
               Add a sub account
             </button>
           </div>{" "}
+          {/* Sub Div 2 Top */}
+          {/* Sub Div 2 Main */}
           <div className="dashboardMain_body_body">
+            {/* Accounts Div */}
             <div className="dashboardMain_body_body_top">
               <AccountCard
                 bank="PROVIDUS BANK"
@@ -81,6 +99,8 @@ const Dashboard = () => {
                 kobo="45"
               />
             </div>
+            {/* Accounts Div */}
+            {/* Summary Div */}
             <div className="dashboardMain_body_body_middle">
               <div className="dashboardMain_body_body_middle_summary">
                 <span className="dashboardMain_body_body_middle_summary_month">
@@ -138,6 +158,7 @@ const Dashboard = () => {
                       <div className="dashboardMain_body_body_middle_outflow_body_type_bank_range_progress"></div>
                     </div>
                   </div>
+                  {/* Bank */}
                   {/* Internet */}
                   <div className="dashboardMain_body_body_middle_outflow_body_type">
                     <div className="dashboardMain_body_body_middle_outflow_body_type_internet">
@@ -155,6 +176,7 @@ const Dashboard = () => {
                       <div className="dashboardMain_body_body_middle_outflow_body_type_internet_range_progress"></div>
                     </div>
                   </div>
+                  {/* Internet */}
                   {/* Marketing */}
                   <div className="dashboardMain_body_body_middle_outflow_body_type">
                     <div className="dashboardMain_body_body_middle_outflow_body_type_marketing">
@@ -172,6 +194,7 @@ const Dashboard = () => {
                       <div className="dashboardMain_body_body_middle_outflow_body_type_marketing_range_progress"></div>
                     </div>
                   </div>
+                  {/* Marketing */}
                   {/* Transfer */}
                   <div className="dashboardMain_body_body_middle_outflow_body_type">
                     <div className="dashboardMain_body_body_middle_outflow_body_type_transfer">
@@ -189,9 +212,12 @@ const Dashboard = () => {
                       <div className="dashboardMain_body_body_middle_outflow_body_type_transfer_range_progress"></div>
                     </div>
                   </div>
+                  {/* Transfer */}
                 </div>
               </div>
             </div>
+            {/* Summary Div */}
+            {/* Transaction Div */}
             <div className="dashboardMain_body_body_bottom">
               <div className="dashboardMain_body_body_bottom_head">
                 <span className="dashboardMain_body_body_bottom_head_text">
@@ -258,9 +284,13 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
+            {/* Transaction Div */}
           </div>
+          {/* Sub Div 2 Main */}
         </div>
+        {/* Sub Div 2 */}
       </section>
+      {/* Main Content Div */}
       <Footer dark />
     </div>
   );

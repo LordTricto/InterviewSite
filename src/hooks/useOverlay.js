@@ -3,22 +3,22 @@ const useOverlay = () => {
     exit: {
       opacity: 1,
       pointerEvents: "unset",
-      transition: { duration: 2, ease: "easeInOut" },
+      transition: { duration: 2, ease: "easeOut" },
     },
     exitText: {
       opacity: 1,
       pointerEvents: "unset",
-      transition: { duration: 2, ease: "easeInOut" },
+      transition: { duration: 2, ease: "easeOut" },
     },
     animate: {
       opacity: 0,
       pointerEvents: "none",
-      transition: { delay: 0.5, duration: 1, ease: "easeInOut" },
+      transition: { delay: 0.5, duration: 1, ease: "easeOut" },
     },
     animateText: {
       opacity: 0,
       pointerEvents: "none",
-      transition: { duration: 1, ease: "easeInOut" },
+      transition: { duration: 1, ease: "easeOut" },
     },
   };
 

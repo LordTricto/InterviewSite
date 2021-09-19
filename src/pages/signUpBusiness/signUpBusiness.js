@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import Navbar from "../../Components/Navbar/Navbar";
@@ -13,8 +13,15 @@ import useOverlay from "../../hooks/useOverlay";
 const SignUpBusiness = () => {
   const [selectedOption, setSelectedOption] = useState(false);
   const [animation] = useOverlay();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+    };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <div className="container">
+      {/* Page Transition Div */}
       <motion.div
         className="overlay"
         variants={animation}
@@ -29,14 +36,22 @@ const SignUpBusiness = () => {
           alt="logo"
         />
       </motion.div>
+      {/* Page Transition Div */}
+      {/* Sidebar Div */}
       <aside className="sideContent">
         <Sidebar />
       </aside>
+      {/* Sidebar Div */}
+      {/* Main Content Div */}
       <section className="main">
+        {/* Sub Div 1 */}
         <div className="main_head">
           <Navbar />
         </div>
+        {/* Sub Div 1 */}
+        {/* Sub Div 2 */}
         <div className="main_body">
+          {/* Sub Div 2 Header*/}
           <div className="main_body_top">
             <span className="main_body_top_header">
               Open a new business account
@@ -46,6 +61,8 @@ const SignUpBusiness = () => {
               A short description comes here{" "}
             </p>
           </div>{" "}
+          {/* Sub Div 2 Header*/}
+          {/* Sub Div 2 Form*/}
           <div className="main_body_middle">
             <form className="main_body_middle_form">
               {/* CAC Section */}
@@ -239,14 +256,18 @@ const SignUpBusiness = () => {
               </div>
             </form>
           </div>{" "}
+          {/* Sub Div 2 Form*/}
+          {/* Sub Div 2 Button*/}
           <div className="main_body_bottom">
             <Link to="/signIn">
               <button>Next</button>
             </Link>
           </div>
+          {/* Sub Div 2 Button*/}
         </div>
+        {/* Sub Div 2 */}
       </section>
-
+      {/* Main Content Div */}
       <Footer />
     </div>
   );

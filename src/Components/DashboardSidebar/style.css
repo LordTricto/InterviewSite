@@ -3,6 +3,8 @@
   flex-direction: column;
   justify-content: flex-start;
   height: 100%;
+  height: -webkit-fill-available;
+  min-height: -webkit-fill-available;
   width: 100%;
   padding: 1.5rem 0 0 0;
 }
@@ -71,11 +73,13 @@
   }
   .dashboardSidebar_userPicture {
     display: flex;
+    height: 2.5rem;
     width: 2.5rem;
-    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
     cursor: pointer;
   }
   .dashboardSidebar_userPicture img {
+    height: 100%;
     width: 100%;
   }
   .dashboardSidebar_body_body {

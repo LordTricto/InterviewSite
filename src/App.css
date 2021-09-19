@@ -15,6 +15,8 @@ a {
 .overlay {
   height: 100%;
   width: 100vw;
+  height: -webkit-fill-available;
+  min-height: -webkit-fill-available;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,5 +94,15 @@ a {
   }
   .main_body {
     padding: 7rem 0 0 0;
+  }
+}
+
+/* Surface Duo */
+@media only screen and (max-width: 550px) {
+  .main {
+    min-height: 64rem;
+  }
+  .main_body {
+    width: 100%;
   }
 }

@@ -289,12 +289,12 @@
     padding: 2rem 1rem;
     background-color: #f4f8fb;
   }
-  .dashboardMain_body_head {
-    /* display: none; */
-  }
 }
 /* Surface Duo */
 @media only screen and (max-width: 550px) {
+  .dashboardMain {
+    padding-top: 0;
+  }
   .dashboardMain_body_head {
     display: flex;
     justify-content: flex-start;
