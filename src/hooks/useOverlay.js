@@ -3,6 +3,7 @@ const useOverlay = () => {
     exit: {
       opacity: 1,
       pointerEvents: "unset",
+      overFlow: "hidden",
       transition: { duration: 2, ease: "easeOut" },
     },
     exitText: {
@@ -13,6 +14,7 @@ const useOverlay = () => {
     animate: {
       opacity: 0,
       pointerEvents: "none",
+      overFlow: "hidden",
       transition: { delay: 0.5, duration: 1, ease: "easeOut" },
     },
     animateText: {

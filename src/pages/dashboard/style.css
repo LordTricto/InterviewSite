@@ -3,6 +3,9 @@
   grid-template-columns: 1fr 4fr;
   overflow: hidden;
 }
+.overFlow {
+  overflow: hidden;
+}
 .dashboardSideContent {
   background-color: #fff;
   box-shadow: 1px 1px 7px -2px rgb(0 0 0 / 50%);

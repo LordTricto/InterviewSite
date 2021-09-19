@@ -1,23 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import Navbar from "../../Components/Navbar/Navbar";
 import Input from "../../Components/Input/Input";
 import Footer from "../../Components/Footer/Footer";
+import Select from "../../Components/Select/Select";
 import "./style.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import logo from "../../assets/Combined Shape 2@2x.png";
 import { motion } from "framer-motion";
 import useOverlay from "../../hooks/useOverlay";
 
 function SignUp() {
-  const [clickButton, setClickButton] = useState(true);
-  const [countryCode, setCountryCode] = useState(true);
   const [animation] = useOverlay();
-  const clickSelect = () => {
-    clickButton ? setClickButton(false) : setClickButton(true);
-  };
   useEffect(() => {
     window.scrollTo(0, 0);
     window.onbeforeunload = function () {
@@ -76,60 +70,7 @@ function SignUp() {
               </div>
 
               <div className="main_body_middle_form_number_container">
-                <div className="main_body_middle_form_number_container_select">
-                  <div
-                    className="main_body_middle_form_number_container_select_country"
-                    onClick={clickSelect}
-                  >
-                    <span className="main_body_middle_form_number_container_select_country_text">
-                      Country
-                    </span>
-                    <span className="main_body_middle_form_number_container_select_country_number">
-                      {countryCode}
-                    </span>
-                  </div>
-                  <div
-                    className="main_body_middle_form_number_container_select_icon"
-                    onClick={clickSelect}
-                  >
-                    <span
-                      className={` icon ${
-                        clickButton ? "icon_spin_on" : " icon_spin_off"
-                      }`}
-                    >
-                      <FontAwesomeIcon icon={faChevronDown} className="icon" />
-                    </span>
-                  </div>
-
-                  <ul
-                    className={`main_body_middle_form_number_container_select_options ${
-                      clickButton ? "disappear" : "appear"
-                    }`}
-                    onClick={clickSelect}
-                  >
-                    <li
-                      onClick={() => {
-                        setCountryCode("+232");
-                      }}
-                    >
-                      +232
-                    </li>
-                    <li
-                      onClick={() => {
-                        setCountryCode("+233");
-                      }}
-                    >
-                      +233
-                    </li>
-                    <li
-                      onClick={() => {
-                        setCountryCode("+234");
-                      }}
-                    >
-                      +234
-                    </li>
-                  </ul>
-                </div>
+                <Select />
                 <div className="main_body_middle_form_number_container_input">
                   <Input name="mobileNumber" text="Mobile Number" type="text" />
                 </div>

@@ -28,7 +28,7 @@ const Dashboard = () => {
     showMobile ? setShowMobile(false) : setShowMobile(true);
   };
   return (
-    <div className="dashboardContainer">
+    <div className={`dashboardContainer ${showMobile ? "overFlow" : null}`}>
       {/* Page Transition Div */}
       <motion.div
         className="overlay"
